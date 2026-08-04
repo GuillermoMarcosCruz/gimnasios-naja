@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Opcional: Agrega un comportamiento de scroll suave para los enlaces */
+html {
+  scroll-behavior: smooth;
+}
