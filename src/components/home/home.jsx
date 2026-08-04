@@ -1,6 +1,5 @@
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-import styles from "./home.module.css";
 import { FaTiktok } from "react-icons/fa6";
 import sayer1 from '../../img/patrocinadores/sayer1.png';
 import sayer from '../../img/patrocinadores/sayer.png';
@@ -17,7 +16,7 @@ const Home = () => {
          <div className="relative bg-slate-950 min-h-[70vh] flex items-center justify-center text-center px-6 pt-24 overflow-hidden">
   {/* Gradiente de fondo imitando luces de dojo */}
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.12)_0%,transparent_70%)]"></div>
-  
+
   <div className="relative max-w-4xl mx-auto space-y-6 z-10">
     <span className="text-red-500 font-black tracking-widest text-xs uppercase bg-red-950/40 px-3 py-1.5 rounded-full border border-red-500/20">
       Bienvenidos a Institutos Naja
@@ -86,11 +85,11 @@ const Home = () => {
       Respaldado por marcas líderes
     </h4>
     <div className="flex flex-wrap items-center justify-center gap-12 opacity-60">
-      <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl flex items-center justify-center max-w-[160px] grayscale hover:grayscale-0 transition-all duration-300">
-        <img src="/path-a-tu-imagen-sayer.png" alt="Sayer" className="h-10 object-contain" />
+      <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl flex items-center justify-center max-w-40 grayscale hover:grayscale-0 transition-all duration-300">
+        <img src={sayer1} alt="Sayer" className="h-10 object-contain" />
       </div>
-      <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl flex items-center justify-center max-w-[160px] grayscale hover:grayscale-0 transition-all duration-300">
-        <img src="/path-a-tu-imagen-tienda.png" alt="Instalaciones Naja" className="h-10 object-contain" />
+      <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl flex items-center justify-center max-w-40 grayscale hover:grayscale-0 transition-all duration-300">
+        <img src={sayer} alt="Instalaciones Naja" className="h-10 object-contain" />
       </div>
     </div>
   </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTiktok, FaWhatsapp, FaMapMarkerAlt } from 'react-icons/fa';
+import logo from '../../img/naja.png';
 
 const Footer = () => {
    return (
@@ -12,7 +13,7 @@ const Footer = () => {
                <div className="flex items-center space-x-3">
                   <div className="bg-white p-1 rounded-full w-14 h-14 flex items-center justify-center shadow-lg border border-red-500/20">
                      {/* Ruta exacta a tu imagen de logo en la carpeta public o src */}
-                     <img src="../../../../img/naja.jpg" alt="Logo Naja" className="w-12 h-12 object-contain" />
+                     <img src={logo} alt="Logo Naja" className="w-12 h-12 object-contain" />
                   </div>
                   <div>
                      <h3 className="text-lg font-black tracking-tight text-yellow-500">

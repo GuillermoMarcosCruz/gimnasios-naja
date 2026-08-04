@@ -74,7 +74,7 @@ const Navbar = () => {
 
   {/* CONTENEDOR DESPLEGABLE */}
   <div className="absolute top-full left-0 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl py-2 w-52 mt-0 hidden group-hover:block animate-fadeIn">
-    
+
     {/* ⚡ PUENTE INVISIBLE: Evita que el menú se cierre al mover el mouse hacia abajo */}
     <div className="absolute -top-4 left-0 w-full h-4 bg-transparent"></div>
 
