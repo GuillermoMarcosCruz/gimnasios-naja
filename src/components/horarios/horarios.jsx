@@ -6,16 +6,24 @@ const HorariosPage = () => {
 
   // Datos de la agenda de clases de Gimnasios Naja
   const clases = [
-    { hora: '16:00 - 17:00', disciplina: 'Tae Kwon Do', dias: 'Lunes a Viernes', grupo: 'Infantil (Principiantes)', color: 'border-l-red-500 text-red-400' },
-    { hora: '17:00 - 18:00', disciplina: 'Tae Kwon Do', dias: 'Lunes a Viernes', grupo: 'Juvenil / Cintas Negras', color: 'border-l-red-500 text-red-400' },
-    { hora: '18:00 - 19:15', disciplina: 'Muay Thai', dias: 'Lunes, Miércoles y Viernes', grupo: 'General (Mixto)', color: 'border-l-amber-500 text-amber-400' },
-    { hora: '18:00 - 19:15', disciplina: 'Kickboxing', dias: 'Martes y Jueves', grupo: 'General (Mixto)', color: 'border-l-red-600 text-red-500' },
-    { hora: '19:15 - 20:30', disciplina: 'Artes Marciales Mixtas', dias: 'Lunes a Viernes', grupo: 'Avanzados / Competidores', color: 'border-l-emerald-500 text-emerald-400' },
-    { hora: '20:30 - 21:30', disciplina: 'Krabi Krabong', dias: 'Martes y Jueves', grupo: 'General (Adultos)', color: 'border-l-orange-500 text-orange-400' },
+    { hora: '5:00 P.M. - 6:00 P.M.', disciplina: 'Tae Kwon Do', dias: 'Lunes, Miércoles y Viernes', grupo: 'General (Mixto)', color: 'border-l-red-500 text-red-400' },
+    { hora: '6:00 P.M. - 7:00 P.M.', disciplina: 'Tae Kwon Do', dias: 'Lunes, Miércoles y Viernes', grupo: 'General (Mixto)', color: 'border-l-red-500 text-red-400' },
+    { hora: '7:00 P.M. - 8:00 P.M.', disciplina: 'Tae Kwon Do', dias: 'Lunes, Miércoles y Viernes', grupo: 'General (Mixto)', color: 'border-l-red-500 text-red-400' },
+    { hora: '5:00 P.M. - 6:00 P.M.', disciplina: 'Tae Kwon Do', dias: 'Martes, Jueves y Sabado', grupo: 'General (Mixto)', color: 'border-l-red-500 text-red-400' },
+    { hora: '6:00 P.M. - 7:00 P.M.', disciplina: 'Tae Kwon Do', dias: 'Martes, Jueves y Sabado', grupo: 'General (Mixto)', color: 'border-l-red-500 text-red-400' },
+    { hora: '7:00 P.M. - 8:00 P.M.', disciplina: 'Tae Kwon Do', dias: 'Martes, Jueves y Sabado', grupo: 'General (Mixto)', color: 'border-l-red-500 text-red-400' },
+    { hora: '6:00 P.M. - 7:00 P.M.', disciplina: 'Muay Thai', dias: 'Lunes, Miércoles y Viernes', grupo: 'General (Mixto)', color: 'border-l-amber-500 text-amber-400' },
+    { hora: '7:00 P.M. - 8:00 P.M.', disciplina: 'Muay Thai', dias: 'Lunes, Miércoles y Viernes', grupo: 'General (Mixto)', color: 'border-l-amber-500 text-amber-400' },
+    { hora: '8:00 P.M. - 9:00 P.M.', disciplina: 'Muay Thai', dias: 'Lunes, Miércoles y Viernes', grupo: 'General (Mixto)', color: 'border-l-amber-500 text-amber-400' },
+    { hora: '6:00 P.M. - 7:00 P.M.', disciplina: 'Kickboxing', dias: 'Lunes, Miércoles y Viernes', grupo: 'General (Mixto)', color: 'border-l-red-600 text-red-500' },
+    { hora: '7:00 P.M. - 8:00 P.M.', disciplina: 'Kickboxing', dias: 'Lunes, Miércoles y Viernes', grupo: 'General (Mixto)', color: 'border-l-red-600 text-red-500' },
+    { hora: '8:00 P.M. - 9:00 P.M.', disciplina: 'Kickboxing', dias: 'Lunes, Miércoles y Viernes', grupo: 'General (Mixto)', color: 'border-l-red-600 text-red-500' },
+    //{ hora: '19:15 - 20:30', disciplina: 'Artes Marciales Mixtas', dias: 'Lunes a Viernes', grupo: 'Avanzados / Competidores', color: 'border-l-emerald-500 text-emerald-400' },
+    { hora: '8:00 P.M. - 9:00 P.M.', disciplina: 'Krabi Krabong', dias: 'Sabado', grupo: 'General (Mixto)', color: 'border-l-orange-500 text-orange-400' },
   ];
 
   // Lista de disciplinas únicas para los botones del filtro
-  const disciplinasUnicas = ['todos', 'Tae Kwon Do', 'Muay Thai', 'Kickboxing', 'Artes Marciales Mixtas', 'Krabi Krabong'];
+  const disciplinasUnicas = ['todos', 'Tae Kwon Do', 'Muay Thai', 'Kickboxing', 'Krabi Krabong'];
 
   // Filtrado lógico de los horarios
   const clasesFiltradas = filtro === 'todos' 

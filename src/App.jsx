@@ -12,6 +12,8 @@ import Horarios from "./components/horarios/horarios";
 import Instructores from "./components/instructores/instructores";
 import Blog from "./components/blog/blog";
 import Contacto from "./components/contacto/contacto";
+import Vocabulario from "./components/vocabulario/vocabulario";
+import VocabularioMuay from "./components/vocabulario/vocabularioMuaythai";
 
 import {
   BrowserRouter,
@@ -36,6 +38,8 @@ function App() {
           <Route path="/instructores" element={<Instructores/>}/>
           <Route path="/blog" element={<Blog/>}/>
           <Route path="/contacto" element={<Contacto/>}/>
+          <Route path="/vocabulario" element={<Vocabulario/>}/>
+          <Route path="/vocabularioMuay" element={<VocabularioMuay/>}/>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>

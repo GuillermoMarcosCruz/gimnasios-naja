@@ -3,27 +3,27 @@ import React from 'react';
 const MuayThaiPage = () => {
   // Conteo tradicional en Tailandés
   const numerosTailandeses = [
-    { tailandes: 'NEUNG', espanol: '1' },
-    { tailandes: 'SONG', espanol: '2' },
-    { tailandes: 'SAM', espanol: '3' },
-    { tailandes: 'SI', espanol: '4' },
-    { tailandes: 'HA', espanol: '5' },
-    { tailandes: 'HOK', espanol: '6' },
-    { tailandes: 'CHET', espanol: '7' },
-    { tailandes: 'PAET', espanol: '8' },
-    { tailandes: 'KAO', espanol: '9' },
-    { tailandes: 'SIP', espanol: '10' },
-  ];
+  { tailandes: 'NEUNG', espanol: '1', fonetica: 'หนึ่ง' },
+  { tailandes: 'SONG', espanol: '2', fonetica: 'สอง' },
+  { tailandes: 'SAM', espanol: '3', fonetica: 'สาม' },
+  { tailandes: 'SI', espanol: '4', fonetica: 'สี่' },
+  { tailandes: 'HA', espanol: '5', fonetica: 'ห้า' },
+  { tailandes: 'HOK', espanol: '6', fonetica: 'หก' },
+  { tailandes: 'CHET', espanol: '7', fonetica: 'เจ็ด' },
+  { tailandes: 'PAET', espanol: '8', fonetica: 'แปด' },
+  { tailandes: 'KAO', espanol: '9', fonetica: 'เก้า' },
+  { tailandes: 'SIP', espanol: '10', fonetica: 'สิบ' },
+];
 
   // Las armas del Muay Thai (Las 8 extremidades)
   const tecnicas = [
-    { nombre: 'Mat (Chok)', tipo: 'Puño', desc: 'Golpes de mano que incluyen el jab, directo, cruzado, gancho y el clásico puño giratorio (Backfist).' },
-    { nombre: 'Te (Chae)', tipo: 'Patada', desc: 'La famosa patada circular a las costillas (Middle Kick) o a los muslos (Low Kick), usando la tibia como superficie de impacto.' },
-    { nombre: 'Khao', tipo: 'Rodilla', desc: 'Impactos frontales, laterales o voladores directos al cuerpo del oponente, letales en la distancia del clinch.' },
-    { nombre: 'Sok', tipo: 'Codo', desc: 'Golpes cortantes y contundentes de corta distancia. Pueden ser descendentes, horizontales o de giro.' },
-    { nombre: 'Teep', tipo: 'Empuje', desc: 'Patada frontal de empuje utilizada principalmente para controlar la distancia, frenar ataques o desestabilizar.' },
-    { nombre: 'Muay Pram', tipo: 'Clinch', desc: 'El sistema de lucha e inmovilización de pie característico del Muay Thai para dominar el cuello y golpear con rodillas.' },
-  ];
+  { nombre: 'Mat (Chok)', tipo: 'Puño', desc: 'Golpes de mano que incluyen el jab, directo, cruzado, gancho y el clásico puño giratorio (Backfist).', fonetica: 'หมัด' },
+  { nombre: 'Te (Chae)', tipo: 'Patada', desc: 'La famosa patada circular a las costillas (Middle Kick) o a los muslos (Low Kick), usando la tibia como superficie de impacto.', fonetica: 'เตะ' },
+  { nombre: 'Khao', tipo: 'Rodilla', desc: 'Impactos frontales, laterales o voladores directos al cuerpo del oponente, letales en la distancia del clinch.', fonetica: 'เข่า' },
+  { nombre: 'Sok', tipo: 'Codo', desc: 'Golpes cortantes y contundentes de corta distancia. Pueden ser descendentes, horizontales o de giro.', fonetica: 'ศอก' },
+  { nombre: 'Teep', tipo: 'Empuje', desc: 'Patada frontal de empuje utilizada principalmente para controlar la distancia, frenar ataques o desestabilizar.', fonetica: 'ถีบ' },
+  { nombre: 'Muay Pram', tipo: 'Clinch', desc: 'El sistema de lucha e inmovilización de pie característico del Muay Thai para dominar el cuello y golpear con rodillas.', fonetica: 'มวยปล้ำ' },
+];
 
   // Elementos culturales esenciales
   const cultura = [
@@ -33,22 +33,47 @@ const MuayThaiPage = () => {
   ];
 
   // ⚡ FUNCIÓN DE REPRODUCCIÓN DE VOZ NATIVA NARRADA EN TAILANDÉS
-  const reproducirVozTailandes = (textoTailandes) => {
-    // Cancela cualquier reproducción de voz previa activa
-    window.speechSynthesis.cancel();
+  const reproducirVozTailandes = (item) => {
+    if ('speechSynthesis' in window) {
+      // 1. Limpiar colas de reproducción previas
+      window.speechSynthesis.cancel();
+      
+      const textoEmision = item.fonetica ? item.fonetica : item.termino;
+      const utterance = new SpeechSynthesisUtterance(textoEmision);
+      
+      utterance.lang = 'th-TH';
+      
+      // 2. CALIBRACIÓN DE FUERZA Y TONO GRAVE DE HOMBRE
+      utterance.rate = 0.85;   // Velocidad pausada, firme y clara para entrenamiento
+      utterance.pitch = 0.50;  // Baja el tono (rango habitual: 0.5 a 2) para volver la voz grave y fuerte
+      utterance.volume = 1.0;  // Forzar volumen máximo de salida de la interfaz
 
-    // Instancia el lector de texto del navegador
-    const utterance = new SpeechSynthesisUtterance(textoTailandes.toLowerCase());
-    
-    // Configura el idioma nativo a Tailandés (Siam)
-    utterance.lang = 'th-TH';
-    
-    // Ajustes de velocidad para captar bien la fonética tonal del tailandés
-    utterance.rate = 0.8; 
-    utterance.pitch = 1.0; 
+      // 3. SELECCIÓN ESTRICTA DE VOZ MASCULINA
+      const voces = window.speechSynthesis.getVoices();
+      
+      // Filtra de entre todas las voces cargadas del sistema operativo aquellas que contengan rasgos de hombre o el nombre tailandés masculino común Somsak
+      const vozHombreThai = voces.find(v => 
+        (v.lang.includes('th-TH') || v.lang.includes('th_TH')) && 
+        (v.name.toLowerCase().includes('male') || v.name.toLowerCase().includes('man') || v.name.toLowerCase().includes('somsak'))
+      );
 
-    // Ejecuta la voz
-    window.speechSynthesis.speak(utterance);
+      // Si no encuentra una voz masculina thai específica en el hardware, asigna la primera voz tailandesa que halle disponible
+      const vozThaiGenerica = voces.find(v => v.lang.includes('th-TH') || v.lang.includes('th_TH'));
+
+      if (vozHombreThai) {
+        utterance.voice = vozHombreThai;
+      } else if (vozThaiGenerica) {
+        utterance.voice = vozThaiGenerica;
+      } else {
+        // Mecanismo de respaldo automático en español si el paquete de idioma asiático no está descargado
+        console.warn("Voz nativa no detectada. Activando motor por defecto con tono grave forzado.");
+        utterance.lang = window.navigator.language || 'es-ES';
+      }
+      
+      window.speechSynthesis.speak(utterance);
+    } else {
+      console.error("Este navegador no tiene soporte para la API de síntesis de voz.");
+    }
   };
 
   return (
@@ -56,7 +81,7 @@ const MuayThaiPage = () => {
       <div className="max-w-6xl mx-auto space-y-20">
         
         {/* SECCIÓN 1: INTRODUCCIÓN / CABECERA */}
-        <div className="relative bg-gradient-to-r from-slate-900 to-slate-900 border border-slate-800 p-8 md:p-10 rounded-2xl shadow-xl overflow-hidden">
+        <div className="relative bg-linear-to-r from-slate-900 to-slate-900 border border-slate-800 p-8 md:p-10 rounded-2xl shadow-xl overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-amber-600/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-32 h-32 bg-red-600/5 rounded-full blur-3xl"></div>
           
@@ -90,7 +115,7 @@ const MuayThaiPage = () => {
         onClick={() => {
           // El nombre tiene un formato como "Mat (Chok)", limpiamos el paréntesis para una lectura fluida
           const nombreLimpio = tec.nombre.split(' ')[0];
-          reproducirVozTailandes(nombreLimpio);
+          reproducirVozTailandes(tec);
         }} /* 👈 Llama a la voz en tailandés al hacer clic */
         className="bg-slate-900 border border-slate-800 p-6 rounded-xl shadow-md flex flex-col justify-between hover:border-amber-500/40 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 group cursor-pointer select-none"
         title="Escuchar pronunciación tradicional"
@@ -127,7 +152,7 @@ const MuayThaiPage = () => {
             {numerosTailandeses.map((num) => (
               <div 
                 key={num.espanol} 
-                onClick={() => reproducirVozTailandes(num.tailandes)} /* 👈 Activa la voz al hacer clic */
+                onClick={() => reproducirVozTailandes(num)} /* 👈 Activa la voz al hacer clic */
                 className="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow-md flex flex-col items-center justify-center text-center transition-all duration-200 hover:border-amber-500/50 hover:scale-[1.03] active:scale-[0.98] group cursor-pointer select-none"
                 title="Haz clic para escuchar la pronunciación"
               >
@@ -162,6 +187,29 @@ const MuayThaiPage = () => {
                 <p className="text-xs text-slate-400 font-medium leading-relaxed">{cul.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+
+{/* SECCIÓN ADICIONAL: ACCESO AL VOCABULARIO OFICIAL */}
+        <div className="relative bg-linear-to-r from-slate-900 via-slate-900 to-red-950/20 border border-slate-800 p-8 rounded-2xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden">
+          <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-red-600/5 rounded-full blur-3xl"></div>
+
+          <div className="space-y-2 text-center md:text-left max-w-xl">
+            <h3 className="text-lg font-black text-white uppercase tracking-wide">
+              ¿Te preparas para tu próximo examen de grado khan?
+            </h3>
+            <p className="text-xs text-slate-400 font-medium leading-relaxed">
+              Explora nuestra enciclopedia técnica oficial con el glosario completo de posiciones, comandos, ataques y partes del cuerpo en tailandés con audio nativo integrado.
+            </p>
+          </div>
+
+          <div className="shrink-0 w-full md:w-auto">
+            <a
+              href="/vocabularioMuay"
+              className="w-full md:w-auto bg-red-600 hover:bg-red-700 text-white font-bold text-xs tracking-widest px-6 py-3.5 rounded-xl transition-all duration-200 uppercase shadow-lg shadow-red-600/10 text-center inline-block"
+            >
+              Estudiar Vocabulario 🔊
+            </a>
           </div>
         </div>
 

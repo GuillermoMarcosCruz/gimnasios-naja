@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../../img/naja.png';
 
 const Navbar = () => {
   // Estados para controlar los menús interactivos
@@ -21,7 +22,6 @@ const Navbar = () => {
     { name: 'Tae Kwon Do', href: '/taekwondo' },
     { name: 'Muay Thai', href: '/muaythai' },
     { name: 'Kickboxing', href: '/kickboxing' },
-    { name: 'Artes Marciales Mixtas', href: '/artesmarcialesmixtas' },
     { name: 'Krabi Krabong', href: '/krabikrabong' },
   ];
 
