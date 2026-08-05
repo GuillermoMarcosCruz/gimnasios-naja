@@ -30,7 +30,7 @@ const ArtesMarcialesMixtasPage = () => {
       <div className="max-w-6xl mx-auto space-y-20">
         
         {/* SECCIÓN 1: INTRODUCCIÓN / CABECERA */}
-        <div className="relative bg-gradient-to-r from-slate-900 to-slate-900 border border-slate-800 p-8 md:p-10 rounded-2xl shadow-xl overflow-hidden">
+        <div className="relative bg-linear-to-r from-slate-900 to-slate-900 border border-slate-800 p-8 md:p-10 rounded-2xl shadow-xl overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-32 h-32 bg-slate-500/5 rounded-full blur-3xl"></div>
           
@@ -80,7 +80,7 @@ const ArtesMarcialesMixtasPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {fasesCombate.map((fase) => (
               <div key={fase.fase} className="bg-slate-900 border border-slate-800 p-6 rounded-xl shadow-md space-y-2 border-l-4 border-l-emerald-500 hover:border-emerald-500/20 transition-all duration-200">
-                <h3 className="text-sm font-black text-white uppercase tracking-wider text-emerald-400">{fase.fase}</h3>
+                <h3 className="text-sm font-black uppercase tracking-wider text-emerald-400">{fase.fase}</h3>
                 <p className="text-xs text-slate-400 font-medium leading-relaxed">{fase.desc}</p>
               </div>
             ))}

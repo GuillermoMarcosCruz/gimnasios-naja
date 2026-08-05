@@ -66,7 +66,7 @@ const Home = () => {
         <div className="space-y-4">
           <div className="w-12 h-12 bg-red-950/40 rounded-lg flex items-center justify-center border border-red-500/20 text-red-500 font-bold">✓</div>
           <h3 className="text-xl font-extrabold text-white">Nuestros Valores</h3>
-          <ul className="space-y-2 text-xs text-slate-400 font-medium max-h-[180px] overflow-y-auto pr-2 custom-scrollbar">
+          <ul className="space-y-2 text-xs text-slate-400 font-medium max-h-45 overflow-y-auto pr-2 custom-scrollbar">
             <li><strong className="text-slate-200">Disciplina:</strong> Constancia y compromiso en la vida diaria.</li>
             <li><strong className="text-slate-200">Respeto:</strong> Hacia maestros, compañeros y uno mismo.</li>
             <li><strong className="text-slate-200">Humildad:</strong> Actitud de aprendizaje continuo.</li>

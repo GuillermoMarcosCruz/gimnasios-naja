@@ -23,7 +23,7 @@ const KrabiKrabongPage = () => {
       <div className="max-w-6xl mx-auto space-y-20">
         
         {/* SECCIÓN 1: INTRODUCCIÓN / CABECERA */}
-        <div className="relative bg-gradient-to-r from-slate-900 to-slate-900 border border-slate-800 p-8 md:p-10 rounded-2xl shadow-xl overflow-hidden">
+        <div className="relative bg-linear-to-r from-slate-900 to-slate-900 border border-slate-800 p-8 md:p-10 rounded-2xl shadow-xl overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-amber-600/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-32 h-32 bg-red-600/5 rounded-full blur-3xl"></div>
           

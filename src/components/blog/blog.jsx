@@ -66,8 +66,8 @@ const BlogPage = () => {
         {/* ARTÍCULO DESTACADO (Formato ancho horizontal) */}
         <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl md:flex items-stretch hover:border-slate-700 transition-colors duration-200">
           {/* Marcador de posición para imagen del blog destacado */}
-          <div className="md:w-1/2 bg-slate-950 min-h-[240px] flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-slate-800 relative p-8 text-center">
-            <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent"></div>
+          <div className="md:w-1/2 bg-slate-950 min-h-60 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-slate-800 relative p-8 text-center">
+            <div className="absolute inset-0 bg-linear-to-br from-red-600/5 to-transparent"></div>
             <span className="text-4xl mb-2">🥋</span>
             <span className="text-xs font-bold text-slate-500 tracking-widest uppercase">Gimnasios Naja</span>
           </div>
