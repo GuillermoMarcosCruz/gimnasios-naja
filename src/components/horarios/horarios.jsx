@@ -26,14 +26,14 @@ const HorariosPage = () => {
   const disciplinasUnicas = ['todos', 'Tae Kwon Do', 'Muay Thai', 'Kickboxing', 'Krabi Krabong'];
 
   // Filtrado lógico de los horarios
-  const clasesFiltradas = filtro === 'todos' 
-    ? clases 
+  const clasesFiltradas = filtro === 'todos'
+    ? clases
     : clases.filter(c => c.disciplina === filtro);
 
   return (
     <div className="bg-slate-950 text-slate-100 min-h-screen pt-28 pb-16 px-6">
       <div className="max-w-5xl mx-auto space-y-12">
-        
+
         {/* ENCABEZADO */}
         <div className="text-center space-y-3">
           <span className="text-red-500 font-black tracking-widest text-xs uppercase bg-red-950/40 px-3 py-1.5 rounded-full border border-red-500/20">

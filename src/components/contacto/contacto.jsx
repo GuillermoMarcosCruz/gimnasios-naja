@@ -1,3 +1,5 @@
+// 1. IMPORTANTE: Agrega esta importación al inicio de tu archivo (arriba de todo)
+import emailjs from '@emailjs/browser';
 import React, { useState } from 'react';
 import { FaMapMarkerAlt, FaPhoneAlt, FaClock, FaPaperPlane, FaWhatsapp } from 'react-icons/fa';
 
@@ -16,10 +18,27 @@ const ContactoPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+   // 2. Coloca aquí los tres datos reales que copiaste en el Paso 1
+   // Vite lee las variables de entorno de esta forma:
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
     // Espacio listo para conectar servicios como EmailJS, Formspree o tu backend
-    console.log('Datos listos para enviar:', formData);
-    alert('¡Tu mensaje ha sido recibido con éxito! Nos comunicaremos contigo a la brevedad.');
-    setFormData({ nombre: '', telefono: '', disciplina: 'taekwondo', mensaje: '' });
+    // 3. Envío del formulario vinculando tu estado 'formData'
+  emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY)
+    .then((response) => {
+       console.log('Correo enviado con éxito:', response.status, response.text);
+       alert('¡Tu mensaje ha sido recibido con éxito! Nos comunicaremos contigo a la brevedad.');
+       
+       // El formulario se limpia únicamente si el correo se envió correctamente
+       setFormData({ nombre: '', telefono: '', disciplina: 'taekwondo', mensaje: '' });
+    })
+    .catch((error) => {
+       console.error('Error detallado de EmailJS:', error);
+       alert('Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.');
+    });
   };
 
   return (
@@ -118,7 +137,6 @@ const ContactoPage = () => {
                      <option value="taekwondo">Tae Kwon Do</option>
                      <option value="muaythai">Muay Thai</option>
                      <option value="kickboxing">Kickboxing</option>
-                     <option value="artesmarcialesmixtas">Artes Marciales Mixtas</option>
                      <option value="krabikrabong">Krabi Krabong</option>
                   </select>
                   </div>
