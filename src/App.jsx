@@ -21,6 +21,8 @@ import {
   Route
 } from 'react-router-dom';
 
+<meta name="google-site-verification" content="PUkKwfDwLDF5-IgrkXZUSaB0-tGui1c-FN0S2IIhkzc" />
+
 function App() {
   return (
     <>

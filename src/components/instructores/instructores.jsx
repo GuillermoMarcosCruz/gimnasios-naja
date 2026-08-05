@@ -32,14 +32,14 @@ const InstructoresPage = () => {
       foto: '/imagenes/kru-striking.jpg'
     },
     {
-      nombre: 'Yaretzi De La Garza Salas',
-      rol: 'Instructor de Taekwondo',
-      grado: 'Cinta Negra 1° Dan',
-      disciplinas: ['Tae Kwon Do'],
-      experiencia: 'Enfocada en la enseñanza del Taekwondo formativo e infantil. Promueve los valores marciales tradicionales, el desarrollo motriz y la disciplina desde bases tempranas.',
-      colorAcento: 'border-t-rose-500 shadow-rose-500/5',
-      tagColor: 'bg-rose-950/40 text-rose-400 border-rose-500/20',
-      foto: Yaretzi // Reemplazar por tu variable 'Yaretzi' si es importación
+      nombre: 'Julio Luna Contreras',
+      rol: 'Instructor de Muay Thai',
+      grado: 'Grado Azul',
+      disciplinas: ['Muay Thai'],
+      experiencia: 'Instructor enfocado en la enseñanza de los fundamentos técnicos del Muay Thai, promoviendo la disciplina, la resistencia aeróbica y el crecimiento deportivo en alumnos de todos los niveles.',
+      colorAcento: 'border-t-blue-500 shadow-blue-500/5', // Color azul por su Grado Azul
+      tagColor: 'bg-blue-950/40 text-blue-400 border-blue-500/20',     // Color azul por su Grado Azul
+      foto: '/imagenes/kru-striking.jpg'
     },
     {
       nombre: 'Ian Salazar Ayala',
@@ -50,6 +50,16 @@ const InstructoresPage = () => {
       colorAcento: 'border-t-cyan-500 shadow-cyan-500/5',
       tagColor: 'bg-cyan-950/40 text-cyan-400 border-cyan-500/20',
       foto: '/imagenes/kru-striking.jpg'
+    },
+    {
+      nombre: 'Yaretzi De La Garza Salas',
+      rol: 'Instructor de Taekwondo',
+      grado: 'Cinta Negra 1° Dan',
+      disciplinas: ['Tae Kwon Do'],
+      experiencia: 'Enfocada en la enseñanza del Taekwondo formativo e infantil. Promueve los valores marciales tradicionales, el desarrollo motriz y la disciplina desde bases tempranas.',
+      colorAcento: 'border-t-rose-500 shadow-rose-500/5',
+      tagColor: 'bg-rose-950/40 text-rose-400 border-rose-500/20',
+      foto: Yaretzi // Reemplazar por tu variable 'Yaretzi' si es importación
     },
     {
       nombre: 'Misha Reyes Santos',
