@@ -17,11 +17,12 @@ const Home = () => {
          {/* SECCIÓN HERO: Ahora incluye la imagen de fondo con Opción A */}
          {/* 2. REEMPLAZA EL CONTENEDOR HERO POR ESTE: */}
 <div 
-   className="relative min-h-[75vh] flex items-center justify-center text-center px-6 pt-24 overflow-hidden bg-cover bg-center bg-no-repeat"
+   className="relative min-h-[85vh] md:min-h-[75vh] flex items-center justify-center text-center px-4 md:px-6 pt-24 pb-12 overflow-hidden bg-cover bg-center md:bg-center bg-no-repeat animar-fondo-movil"
    style={{ backgroundImage: `url(${fondoHero})` }} // <--- Inyección correcta de la imagen local
 >
-   {/* Capa oscura intermedia (baja el 75 a 50 si quieres que la imagen se vea más clara) */}
-   <div className="absolute inset-0 bg-slate-950/40 z-0"></div>
+   {/* Capas oscuras para proteger la lectura del texto durante el movimiento */}
+   <div className="absolute inset-0 bg-slate-950/40 md:bg-slate-950/40 z-0"></div>
+   <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-transparent to-slate-950 z-0"></div>
    
    {/* Gradiente de luces rojas */}
    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.2)_0%,transparent_70%)] z-0"></div>

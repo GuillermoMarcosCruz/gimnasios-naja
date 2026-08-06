@@ -4,3 +4,17 @@
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes desplazarFondo {
+  0% { background-position: 0% 50%; }   /* Muestra el tercio izquierdo */
+  33% { background-position: 50% 50%; }  /* Muestra el tercio central */
+  66% { background-position: 100% 50%; } /* Muestra el tercio derecho */
+  100% { background-position: 0% 50%; }  /* Regresa al inicio */
+}
+
+/* Clase que aplica la animación solo en pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+  .animar-fondo-movil {
+    animation: desplazarFondo 15s ease-in-out infinite;
+  }
+}
