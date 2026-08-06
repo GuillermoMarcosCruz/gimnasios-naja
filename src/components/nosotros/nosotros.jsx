@@ -21,7 +21,7 @@ const NosotrosPage = () => {
   ];
 
   const textosHistoria = [
-    "Fundados bajo la premisa de difundir la verdadera esencia de las artes marciales en Tuxpan, Veracruz, Gimnasios Naja ha evolucionado de ser una escuela tradicional de Tae Kwon Do a convertirse en un centro especializado en múltiples disciplinas de combate de primer nivel.",
+    "Fundados bajo la premisa de difundir la verdadera esencia de las artes marciales en Tuxpan, Veracruz, abrimos nuestra primera escuela el 7 de noviembre de 1998. Desde entonces, Gimnasios Naja ha evolucionado de ser una escuela tradicional de Tae Kwon Do a convertirse en un centro especializado en múltiples disciplinas de combate de primer nivel.",
     "A lo largo de nuestra trayectoria, hemos entendido que el combate en el área es solo el reflejo de la preparación mental del estudiante. Por ello, adaptamos metodologías modernas de acondicionamiento físico sin perder el código de honor, la cortesía y la humildad que las disciplinas orientales nos han heredado."
   ];
 

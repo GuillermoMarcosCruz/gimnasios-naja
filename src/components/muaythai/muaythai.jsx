@@ -4,7 +4,7 @@ const MuayThaiPage = () => {
   // Conteo tradicional en Tailandés
   const numerosTailandeses = [
   { tailandes: 'NEUNG', espanol: '1', fonetica: 'หนึ่ง' },
-  { tailandes: 'SONG', espanol: '2', fonetica: 'สอง' },
+  { tailandes: 'SHONG', espanol: '2', fonetica: 'สอง' },
   { tailandes: 'SAM', espanol: '3', fonetica: 'สาม' },
   { tailandes: 'SI', espanol: '4', fonetica: 'สี่' },
   { tailandes: 'HA', espanol: '5', fonetica: 'ห้า' },
@@ -12,7 +12,7 @@ const MuayThaiPage = () => {
   { tailandes: 'JIET', espanol: '7', fonetica: 'เจ็ด' },
   { tailandes: 'BAET', espanol: '8', fonetica: 'แปด' },
   { tailandes: 'GHAO', espanol: '9', fonetica: 'เก้า' },
-  { tailandes: 'SIP', espanol: '10', fonetica: 'สิบ' },
+  { tailandes: 'SIPH', espanol: '10', fonetica: 'สิบ' },
 ];
 
   // Las armas del Muay Thai (Las 8 extremidades)

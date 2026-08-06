@@ -114,7 +114,7 @@ const VOCABULARY = [
   // SECCIÓN: NÚMEROS
   // ==========================================
   { seccion: 'numeros', termino: 'NEUNG', significado: 'Número 1', cat: 'Básico', fonetica: 'หนึ่ง' },
-  { seccion: 'numeros', termino: 'SONG', significado: 'Número 2', cat: 'Básico', fonetica: 'สอง' },
+  { seccion: 'numeros', termino: 'SHONG', significado: 'Número 2', cat: 'Básico', fonetica: 'สอง' },
   { seccion: 'numeros', termino: 'SAM', significado: 'Número 3', cat: 'Básico', fonetica: 'สาม' },
   { seccion: 'numeros', termino: 'SIEE', significado: 'Número 4', cat: 'Básico', fonetica: 'สี่' },
   { seccion: 'numeros', termino: 'HA', significado: 'Número 5', cat: 'Básico', fonetica: 'ห้า' },
@@ -122,7 +122,7 @@ const VOCABULARY = [
   { seccion: 'numeros', termino: 'JIET', significado: 'Número 7', cat: 'Básico', fonetica: 'เจ็ด' },
   { seccion: 'numeros', termino: 'BAET', significado: 'Número 8', cat: 'Básico', fonetica: 'แปด' },
   { seccion: 'numeros', termino: 'GHAO', significado: 'Número 9', cat: 'Básico', fonetica: 'เก้า' },
-  { seccion: 'numeros', termino: 'SIP', significado: 'Número 10', cat: 'Básico', fonetica: 'สิบ' },
+  { seccion: 'numeros', termino: 'SIPH', significado: 'Número 10', cat: 'Básico', fonetica: 'สิบ' },
   { seccion: 'numeros', termino: 'YI SIB', significado: 'Número 20', cat: 'Decena', fonetica: 'ยี่สิบ' },
   { seccion: 'numeros', termino: 'NUNG ROY', significado: 'Número 100', cat: 'Centena', fonetica: 'หนึ่งร้อย' },
 
@@ -145,7 +145,7 @@ const VocabularioPage = () => {
     const coincideTexto = 
       item.termino.toLowerCase().includes(busqueda.toLowerCase()) ||
       item.significado.toLowerCase().includes(busqueda.toLowerCase());
-    
+
     return coincidePestaña && coincideTexto;
   });
 
@@ -153,12 +153,12 @@ const VocabularioPage = () => {
     if ('speechSynthesis' in window) {
       // 1. Limpiar colas de reproducción previas
       window.speechSynthesis.cancel();
-      
+
       const textoEmision = item.fonetica ? item.fonetica : item.termino;
       const utterance = new SpeechSynthesisUtterance(textoEmision);
-      
+
       utterance.lang = 'th-TH';
-      
+
       // 2. CALIBRACIÓN DE FUERZA Y TONO GRAVE DE HOMBRE
       utterance.rate = 0.85;   // Velocidad pausada, firme y clara para entrenamiento
       utterance.pitch = 0.50;  // Baja el tono (rango habitual: 0.5 a 2) para volver la voz grave y fuerte
@@ -166,7 +166,7 @@ const VocabularioPage = () => {
 
       // 3. SELECCIÓN ESTRICTA DE VOZ MASCULINA
       const voces = window.speechSynthesis.getVoices();
-      
+
       // Filtra de entre todas las voces cargadas del sistema operativo aquellas que contengan rasgos de hombre o el nombre tailandés masculino común Somsak
       const vozHombreThai = voces.find(v => 
         (v.lang.includes('th-TH') || v.lang.includes('th_TH')) && 
@@ -185,7 +185,7 @@ const VocabularioPage = () => {
         console.warn("Voz nativa no detectada. Activando motor por defecto con tono grave forzado.");
         utterance.lang = window.navigator.language || 'es-ES';
       }
-      
+
       window.speechSynthesis.speak(utterance);
     } else {
       console.error("Este navegador no tiene soporte para la API de síntesis de voz.");
@@ -195,7 +195,7 @@ const VocabularioPage = () => {
   return (
     <div className="min-h-screen bg-[#020617] text-white px-4 py-12 font-sans">
       <div className="max-w-6xl mx-auto">
-        
+
         {/* Encabezado Responsivo Corregido - Estilo Oficial Naja */}
 {/* Encabezado Responsivo con Espaciado Seguro */}
     {/* Encabezado con Espacio de Seguridad Ampliado para Menús Fijos */}
@@ -203,15 +203,15 @@ const VocabularioPage = () => {
   <span className="inline-block text-red-500 text-[10px] md:text-xs font-black tracking-widest uppercase bg-red-950/40 border border-red-900/60 px-3 py-1 rounded-full">
     ENCICLOPEDIA DE ENTRENAMIENTO
   </span>
-  
+
   <h1 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-wider mt-5 md:mt-6 uppercase leading-tight text-white flex flex-wrap justify-center items-center gap-y-2">
-    VOCABULARIO 
+    VOCABULARIO
     <span className="bg-yellow-500 text-black px-3 py-0.5 md:py-1 rounded mx-2 inline-block font-sans">
       OFICIAL
-    </span> 
+    </span>
     MUAY THAI
   </h1>
-  
+
   <p className="text-slate-400 text-xs md:text-sm max-w-xl mx-auto mt-4 md:mt-6 font-medium leading-relaxed balance">
     Estudia la terminología completa exigida por el programa oficial. Haz clic en las tarjetas para activar la pronunciación nativa.
   </p>
@@ -230,7 +230,7 @@ const VocabularioPage = () => {
             className="w-full bg-[#0b111e] border border-slate-800 rounded-lg py-3 pl-10 pr-4 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-red-600 transition-colors"
           />
           {busqueda && (
-            <button 
+            <button
               onClick={() => setBusqueda('')}
               className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-500 hover:text-slate-300 text-xs"
             >
@@ -254,7 +254,7 @@ const VocabularioPage = () => {
               key={tab.id}
               onClick={() => {
                 setSeccionActiva(tab.id);
-                setBusqueda(''); 
+                setBusqueda('');
               }}
               className={`px-5 py-2.5 rounded font-black text-xs uppercase tracking-wider transition-all duration-250 ${
                 seccionActiva === tab.id
@@ -272,7 +272,7 @@ const VocabularioPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {terminosFiltrados.map((item, index) => {
               const color = CATEGORY_COLORS[item.cat] || 'slate';
-              
+
               return (
                 <div
                   key={index}
