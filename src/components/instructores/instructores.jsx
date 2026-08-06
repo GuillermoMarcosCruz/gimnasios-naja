@@ -19,7 +19,7 @@ const InstructoresPage = () => {
       nombre: 'Jesus Salazar Marcelino',
       rol: 'Director Técnico & Fundador',
       grado: 'Cinta Negra 5° Dan / Kru Yai Grado Plateado',
-      disciplinas: ['Tae Kwon Do', 'Muay Thai', 'Krabi Krabong', 'Kick Boxing'],
+      disciplinas: ['Tae Kwon Do', 'Muay Thai', 'Krabi Krabong', 'Kick Boxing', 'Aikido', 'Instructor de PR-24 y Bastón Bo'],
       experiencia: 'Más de 20 años dedicados a la enseñanza y formación de atletas de alto rendimiento en Veracruz. Certificado internacionalmente.',
       colorAcento: 'border-t-yellow-500 shadow-yellow-500/5',
       tagColor: 'bg-yellow-950/40 text-yellow-400 border-yellow-500/20',
@@ -49,7 +49,7 @@ const InstructoresPage = () => {
       nombre: 'Ian Salazar Ayala',
       rol: 'Instructor de Taekwondo',
       grado: 'Cinta Negra 2° Dan',
-      disciplinas: ['Tae Kwon Do'],
+      disciplinas: ['Tae Kwon Do', 'Muay Thai', 'Kick Boxing'],
       experiencia: 'Instructor enfocado en la técnica avanzada de pateo y la preparación de atletas para competencias estatales y nacionales, combinando exigencia táctica y valores de superación.',
       colorAcento: 'border-t-cyan-500 shadow-cyan-500/5',
       tagColor: 'bg-cyan-950/40 text-cyan-400 border-cyan-500/20',
@@ -118,13 +118,13 @@ const InstructoresPage = () => {
                       title="Ver foto en grande"
                     >
                       {ins.foto ? (
-                        <img 
-                          src={ins.foto} 
-                          alt={ins.nombre} 
+                        <img
+                          src={ins.foto}
+                          alt={ins.nombre}
                           className="w-full h-full object-cover object-center"
-                          onError={(e) => { 
-                            e.target.style.display = 'none'; 
-                          }} 
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                          }}
                         />
                       ) : (
                         ins.nombre.split(' ').map(n => n[0]).join('').slice(0, 3)

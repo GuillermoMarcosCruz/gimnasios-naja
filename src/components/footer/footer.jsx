@@ -47,7 +47,7 @@ const Footer = () => {
             <div className="flex flex-col items-center md:items-start space-y-4">
                <h4 className="text-sm font-bold text-white tracking-wider uppercase border-b border-red-500 pb-1">Conéctate con Nosotros</h4>
                <div className="flex flex-col space-y-2.5 text-xs font-medium">
-                  <a href="https://wa.me" target="_blank" rel="noreferrer" className="flex items-center space-x-2.5 hover:text-red-500 transition-colors duration-200">
+                  <a href="https://wa.me/527831434665" target="_blank" rel="noreferrer" className="flex items-center space-x-2.5 hover:text-red-500 transition-colors duration-200">
                      <FaWhatsapp className="text-green-500 text-base" />
                      <span>783 143 4665</span>
                   </a>

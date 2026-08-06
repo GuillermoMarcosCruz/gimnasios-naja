@@ -9,9 +9,9 @@ const MuayThaiPage = () => {
   { tailandes: 'SI', espanol: '4', fonetica: 'สี่' },
   { tailandes: 'HA', espanol: '5', fonetica: 'ห้า' },
   { tailandes: 'HOK', espanol: '6', fonetica: 'หก' },
-  { tailandes: 'CHET', espanol: '7', fonetica: 'เจ็ด' },
-  { tailandes: 'PAET', espanol: '8', fonetica: 'แปด' },
-  { tailandes: 'KAO', espanol: '9', fonetica: 'เก้า' },
+  { tailandes: 'JIET', espanol: '7', fonetica: 'เจ็ด' },
+  { tailandes: 'BAET', espanol: '8', fonetica: 'แปด' },
+  { tailandes: 'GHAO', espanol: '9', fonetica: 'เก้า' },
   { tailandes: 'SIP', espanol: '10', fonetica: 'สิบ' },
 ];
 

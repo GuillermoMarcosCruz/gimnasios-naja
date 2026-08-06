@@ -31,7 +31,7 @@ const ContactoPage = () => {
     .then((response) => {
        console.log('Correo enviado con éxito:', response.status, response.text);
        alert('¡Tu mensaje ha sido recibido con éxito! Nos comunicaremos contigo a la brevedad.');
-       
+
        // El formulario se limpia únicamente si el correo se envió correctamente
        setFormData({ nombre: '', telefono: '', disciplina: 'taekwondo', mensaje: '' });
     })
@@ -85,7 +85,7 @@ const ContactoPage = () => {
                <h3 className="text-base font-bold text-white mb-6 uppercase tracking-wide border-b border-slate-800 pb-2 flex justify-between items-center">
                   <span>Escríbenos un correo</span>
                   <a
-                  href="https://wa.me"
+                  href="https://wa.me/527831434665"
                   target="_blank"
                   rel="noreferrer"
                   className="text-green-500 hover:text-green-400 flex items-center space-x-1 text-xs lowercase font-semibold Normal-case"
